@@ -28,8 +28,11 @@ void createfile(string filename, vector<double> time, int n) {
     for (int i = 0; i < time.size(); i++) {
         if (i == 0)
             file << n << " ";
-        file << fixed << setprecision(10) << time[i] << " ";
+        if (i != time.size() - 1)
+            file << fixed << setprecision(10) << time[i] << " ";
+        else
+            file << fixed << setprecision(10) << time[i] << endl;
+
     }
-    file << endl;
     file.close();
 }
