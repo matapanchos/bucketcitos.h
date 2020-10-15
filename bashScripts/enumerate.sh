@@ -29,6 +29,7 @@ do
 			if [[ -e "$newName~" ]]; #The script will fail if it attempt to remplace a file #TODO se puede encapsular la función de verificar que existe un archivo
 	                then 
                         	echo "Script stopped due to an illegal attempt to remplace the file "$newName~" with "$newName""
+				#TODO create a rollback fucntion that erase the "~" from the file names
                 	        exit
         	        fi;
 			mv -v "$newName" "$newName~" #Si existe, se le adiciona un ~ al final del arcvhivo #TODO se puede hacer que el verbose solo se active a criterio del usuario
